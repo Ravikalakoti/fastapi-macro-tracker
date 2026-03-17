@@ -1,55 +1,44 @@
-from pydantic import BaseModel
-from typing import Optional
+from pydantic import BaseModel, constr
 
-#User schema
+# ----------------
+# User schemas
+# ----------------
 class UserBase(BaseModel):
-	username: str
+    username: constr(min_length=3, max_length=50)
 
 class UserCreate(UserBase):
-	password: str
+    password: constr(min_length=6, max_length=72)  # bcrypt-safe
 
 class UserOut(UserBase):
-	id: int
+    id: int
+    model_config = {"from_attributes": True}
 
-	class config:
-		orm_mode = True
-
-
-#Food schema
+# ----------------
+# Food schemas
+# ----------------
 class FoodBase(BaseModel):
-	name: str
-	fat: float
-	protein: float
-	carbs: float
+    name: str
+    fat: float
+    protein: float
+    carbs: float
 
 class FoodCreate(FoodBase):
-	pass
+    pass
 
 class FoodOut(FoodBase):
-	id: int
+    id: int
+    model_config = {"from_attributes": True}
 
-	class config:
-		orm_mode = True
-
-
-#Meal schema
+# ----------------
+# Meal schemas
+# ----------------
 class MealBase(BaseModel):
-	name: str
-	user_id: int
+    name: str
+    user_id: int
 
 class MealCreate(MealBase):
-	pass
+    pass
 
 class MealOut(MealBase):
-	id: int
-
-	class Config:
-		orm_mode = True
-
-
-
-
-
-
-
-
+    id: int
+    model_config = {"from_attributes": True}
