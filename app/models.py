@@ -18,8 +18,8 @@ class Food(Base):
 	carbs = Column(Float)
 
 class Meal(Base):
-	__tablename__ = "foods"
+	__tablename__ = "meals"
 	id = Column(Integer, primary_key=True, index=True)
-	user_id = Column(Integer, ForeignKey=("users.id"))
+	user_id = Column(Integer, ForeignKey("users.id"))
 	name = Column(String)
 	user = relationship("user")
