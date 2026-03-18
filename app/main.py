@@ -4,11 +4,19 @@ from app.apis import users, foods, meals
 
 app = FastAPI(
     title="Macro Tracker API",
-    description="Built by Ravi Singh Kalakoti \n\nA powerful API to track meals, calories, and macros.",
+    description=(
+        "**Built by Ravi Singh Kalakoti**\n\n"
+        "A powerful API to track meals, calories, and macros.\n\n"
+        "***Connect with me***:\n"
+        "- [LinkedIn](https://www.linkedin.com/in/ravi-kalakoti/)\n"
+        "- [GitHub](https://github.com/Ravikalakoti)\n"
+        "- [HackerRank](https://www.hackerrank.com/profile/ravikalakoti)"
+    ),
     version="1.0.0",
     contact={
         "name": "Ravi Singh Kalakoti",
         "email": "ravikalakoti16@gmail.com",
+        "url": "https://www.linkedin.com/in/ravi-kalakoti/"
     }
 )
 init_db()
