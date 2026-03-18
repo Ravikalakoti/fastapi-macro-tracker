@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, Table
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Table, DateTime
 from sqlalchemy.orm import relationship, declarative_base
+from datetime import datetime
 
 Base = declarative_base()
 
@@ -35,4 +36,18 @@ class Meal(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     name = Column(String, nullable=False)
     user = relationship("User", back_populates="meals")
+    timestamp = Column(DateTime, default=datetime.utcnow)
     foods = relationship("Food", secondary=meal_food_table, back_populates="meals")
+
+    # --------- Macros properties ---------
+    @property
+    def total_fat(self):
+        return sum(food.fat for food in self.foods)
+
+    @property
+    def total_protein(self):
+        return sum(food.protein for food in self.foods)
+
+    @property
+    def total_carbs(self):
+        return sum(food.carbs for food in self.foods)

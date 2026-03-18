@@ -1,5 +1,5 @@
 from pydantic import BaseModel, constr, EmailStr
-from typing import Optional
+from typing import Optional, List
 
 # ----------------
 # User schemas
@@ -56,10 +56,19 @@ class FoodOut(FoodBase):
 class MealBase(BaseModel):
     name: str
     user_id: int
+    food_ids: List[int]
 
-class MealCreate(MealBase):
-    pass
+class MealCreate(BaseModel):
+    name: str
+    food_ids: List[int]
 
-class MealOut(MealBase):
+class MealOut(BaseModel):
     id: int
+    name: str
+    user_id: int
+    foods: list[FoodOut]
+    total_fat: float
+    total_protein: float
+    total_carbs: float
+
     model_config = {"from_attributes": True}
