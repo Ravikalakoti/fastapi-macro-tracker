@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.database import init_db
-from app.apis import users
+from app.apis import users, foods, meals
 
 app = FastAPI(
     title="Macro Tracker API",
@@ -16,6 +16,8 @@ init_db()
 
 #Include Routers
 app.include_router(users.router)
+app.include_router(foods.router)
+app.include_router(meals.router)
 
 @app.get("/")
 async def root():
