@@ -130,8 +130,8 @@ async def send_registration_emails(user: User):
     admin_msg.attach(html_part_admin)
     
     # Send emails
-    await aiosmtplib.send(welcome_msg, hostname="smtp.gmail.com", port=587, username=SENDER_EMAIL, password=SENDER_PASSWORD, start_tls=True)
-    await aiosmtplib.send(admin_msg, hostname="smtp.gmail.com", port=587, username=SENDER_EMAIL, password=SENDER_PASSWORD, start_tls=True)
+    await aiosmtplib.send(welcome_msg, hostname="smtp.gmail.com", port=465, username=SENDER_EMAIL, password=SENDER_PASSWORD, use_tls=True)
+    await aiosmtplib.send(admin_msg, hostname="smtp.gmail.com", port=465, username=SENDER_EMAIL, password=SENDER_PASSWORD, use_tls=True)
 
 
 # Login using OAuth2 form
