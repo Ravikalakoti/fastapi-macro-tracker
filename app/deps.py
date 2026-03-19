@@ -8,7 +8,12 @@ from app.database import SessionLocal
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/users/login")
 
-SECRET_KEY = "oV9sWzj0K8jv2l4nV7Qx-1Yf8uG7p5ZbC3hT2RmL6eQ"  # use strong random key
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 
 def get_db():
