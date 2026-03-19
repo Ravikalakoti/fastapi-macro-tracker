@@ -1,6 +1,66 @@
 # 🍽️ Macro Tracker API
 
-A FastAPI-based backend project to track foods, meals, and nutritional macros like **fat, protein, and carbohydrates**.
+A FastAPI-based backend project to track foods, meals, and nutritional macros like **fat, protein, and carbohydrates**.  
+This backend works alongside a React frontend for easy web access: [Macro Tracker Frontend](https://macro-tracker-frontend.onrender.com/).
+
+---
+
+## 🌐 Live API
+
+🚀 Deployed on Render:
+
+👉 [https://fastapi-macro-tracker.onrender.com/docs](https://fastapi-macro-tracker.onrender.com/docs)
+
+### 📖 API Docs
+
+* Swagger UI → [https://fastapi-macro-tracker.onrender.com/docs](https://fastapi-macro-tracker.onrender.com/docs)  
+* ReDoc → [https://fastapi-macro-tracker.onrender.com/redoc](https://fastapi-macro-tracker.onrender.com/redoc)
+
+---
+
+## 🌐 Frontend Website
+
+Check the live frontend here:  
+
+👉 [https://macro-tracker-frontend.onrender.com/](https://macro-tracker-frontend.onrender.com/)
+
+---
+
+## 📌 Features
+
+* 👤 User management (Authentication in progress 🔐)  
+* 🍎 Food tracking (fat, protein, carbs)  
+* 🍽️ Meal management  
+* 🗄️ Database integration with SQLAlchemy  
+* ⚡ FastAPI for high-performance APIs  
+
+---
+
+## 🚧 Current Status
+
+> ⚙️ Authentication system is currently in progress  
+> (password hashing, login, and secure endpoints)
+
+---
+
+## 🛠️ Tech Stack
+
+* **Backend:** FastAPI  
+* **Database:** SQLite / PostgreSQL (configurable)  
+* **ORM:** SQLAlchemy  
+* **Validation:** Pydantic  
+* **Auth (WIP):** Passlib (bcrypt)
+
+---
+
+## 📂 Project Structure
+
+
+## 🌐 Frontend Website
+
+Check the live frontend here:  
+
+👉 [https://macro-tracker-frontend.onrender.com/](https://macro-tracker-frontend.onrender.com/)
 
 ---
 ## 🌐 Live API

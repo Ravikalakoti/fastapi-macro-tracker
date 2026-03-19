@@ -17,7 +17,7 @@ app = FastAPI(
     contact={
         "name": "Ravi Singh Kalakoti",
         "email": "ravikalakoti16@gmail.com",
-        "url": "https://www.linkedin.com/in/ravi-kalakoti/"
+        "url": "https://macro-tracker-frontend.onrender.com"
     }
 )
 init_db()
