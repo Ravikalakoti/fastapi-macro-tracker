@@ -79,8 +79,7 @@ def delete_meal(
 @router.get("/summary/{summary_date}")
 def daily_summary(summary_date: date, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
     meals = db.query(models.Meal).filter(
-        models.Meal.user_id == current_user.id,
-        models.Meal.timestamp.cast(Date) == summary_date
+        models.Meal.user_id == current_user.id
     ).all()
 
     total_fat = sum(m.total_fat for m in meals)
