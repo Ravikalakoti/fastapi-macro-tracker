@@ -40,6 +40,6 @@ app.include_router(users.router)
 app.include_router(foods.router)
 app.include_router(meals.router)
 
-@app.get("/")
+@app.get("/health")
 async def root():
 	return {"message": "Welcome to Macro Tracker API"}
