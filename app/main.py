@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.database import init_db
 from app.apis import users, foods, meals
 
@@ -21,6 +22,18 @@ app = FastAPI(
 )
 init_db()
 
+# Allow requests from your frontend
+origins = [
+    "http://localhost:5173",  # React dev server
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #Include Routers
 app.include_router(users.router)
