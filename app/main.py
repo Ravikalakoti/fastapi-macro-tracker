@@ -25,6 +25,7 @@ init_db()
 # Allow requests from your frontend
 origins = [
     "http://localhost:5173",  # React dev server
+	"https://macro-tracker-frontend.onrender.com"
 ]
 
 app.add_middleware(
